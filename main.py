@@ -5,3 +5,13 @@ def load_grid(filename):
     """Carrega a grade de um arquivo de texto."""
     with open(filename, 'r') as f:
         return [list(line.strip()) for line in f.readlines()]
+
+def main():
+    grid = load_grid("example_grid.txt")
+    warehouse_ids = {"A", "B"}
+    graph = build_graph(grid, warehouse_ids)
+    export_to_graphviz(graph, "output_graph.dot")
+    print("Grafo gerado com sucesso! Veja o arquivo output_graph.dot")
+
+if __name__ == "__main__":
+    main()
