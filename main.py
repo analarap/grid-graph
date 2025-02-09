@@ -8,7 +8,7 @@ def load_grid(filename):
 
 def main():
     grid = load_grid("example_grid.txt")
-    warehouse_ids = {"A", "B"}
+    warehouse_ids = {"A", "B", "C"}  # Suporte para múltiplos armazéns
     graph = build_graph(grid, warehouse_ids)
     export_to_graphviz(graph, "output_graph.dot")
     print("Grafo gerado com sucesso! Veja o arquivo output_graph.dot")
